@@ -6,7 +6,6 @@ class SosialLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
       height: 55,
       decoration: BoxDecoration(
         color: Color.fromARGB(255, 191, 255, 191),
@@ -18,13 +17,7 @@ class SosialLogin extends StatelessWidget {
           ),
         ],
       ),
-      child: const Text(
-        'Masuk',
-        style: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+    
     );
   }
 }

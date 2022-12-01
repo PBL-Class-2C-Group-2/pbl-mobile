@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/widgets/login.button.dart';
 import 'package:mobile_pbl/view/widgets/social.button.dart';
-import 'widgets/button.global.dart';
 import 'widgets/text.form.global.dart';
 
 class LoginView extends StatelessWidget {
@@ -8,6 +8,7 @@ class LoginView extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,13 +20,9 @@ class LoginView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: Container(
-                    child: Image.asset(
-                      './assets/tambong.png',
-                      width: 220,
-                    ),
-                  ),
+                Center(child: Image.asset('./assets/tambong.jpg',
+                width: 250,
+                ),
                 ),
 
                 //Email form
@@ -46,20 +43,11 @@ class LoginView extends StatelessWidget {
                   textInputType: TextInputType.text,
                   obscure: true,
                 ),
-
-                //ButtonGlobal
-                const SizedBox(height: 25),
-                ButtonGlobal(),
-                const SizedBox(height: 30),
+                LoginButton(),
                 Center(
-                  child: Text(
-                    'Atau',
-                  ),
+                  child: 
+                Text('Atau'),
                 ),
-
-                //Sosial Login
-                const SizedBox(height: 20),
-                SosialLogin(),
               ],
             ),
           ),
@@ -68,3 +56,4 @@ class LoginView extends StatelessWidget {
     );
   }
 }
+
