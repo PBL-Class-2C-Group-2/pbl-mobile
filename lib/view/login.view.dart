@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_pbl/view/widgets/text.form.global.dart';
+import 'package:mobile_pbl/view/widgets/social.button.dart';
+import 'widgets/button.global.dart';
+import 'widgets/text.form.global.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -12,35 +14,52 @@ class LoginView extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
-            alignment: Alignment.center,
             color: Colors.white,
-            width: double.infinity,
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  './assets/tambong.png',
-                  alignment: Alignment.center,
-                  height: 270,
-                  width: 270,
+                Center(
+                  child: Container(
+                    child: Image.asset(
+                      './assets/tambong.png',
+                      width: 220,
+                    ),
+                  ),
                 ),
+
                 //Email form
-                Text("Email"),
+                Text("E-mail"),
                 const SizedBox(height: 5),
                 TextFormGlobal(
                   controller: emailController,
                   textInputType: TextInputType.emailAddress,
                   obscure: false,
                 ),
+
                 //Password Form
                 const SizedBox(height: 10),
                 Text("Password"),
                 const SizedBox(height: 5),
                 TextFormGlobal(
-                    controller: passwordController,
-                    textInputType: TextInputType.text,
-                    obscure: true)
+                  controller: passwordController,
+                  textInputType: TextInputType.text,
+                  obscure: true,
+                ),
+
+                //ButtonGlobal
+                const SizedBox(height: 25),
+                ButtonGlobal(),
+                const SizedBox(height: 30),
+                Center(
+                  child: Text(
+                    'Atau',
+                  ),
+                ),
+
+                //Sosial Login
+                const SizedBox(height: 20),
+                SosialLogin(),
               ],
             ),
           ),

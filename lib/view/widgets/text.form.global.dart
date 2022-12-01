@@ -19,7 +19,7 @@ class TextFormGlobal extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
@@ -32,7 +32,7 @@ class TextFormGlobal extends StatelessWidget {
         obscureText: obscure,
         decoration: InputDecoration(
             border: InputBorder.none,
-            contentPadding: const EdgeInsets.all(0),
+            contentPadding: const EdgeInsets.all(8),
             hintStyle: const TextStyle(
               height: 1,
             )),
