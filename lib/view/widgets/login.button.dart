@@ -12,17 +12,19 @@ class LoginButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 30),
       width: double.infinity,
-      height: 100,
+      height: 105,
       child: ElevatedButton(
-        onPressed: (){},  
+        onPressed: (){},
       child:Text('Masuk',
       style:TextStyle(
         color: Colors.black
-      )),
+      ),
+      ),
       style: ElevatedButton.styleFrom(
-        primary: Color.fromARGB(255, 220, 226, 255),
+        primary: Color.fromARGB(255, 220, 255, 229),
       ),
       ),
     );
+    
   }
 }
