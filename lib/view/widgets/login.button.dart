@@ -10,12 +10,19 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 25),
+      padding: EdgeInsets.symmetric(vertical: 30),
       width: double.infinity,
+      height: 100,
       child: ElevatedButton(
-        onPressed: (){},
-        
-      child:Text('Masuk')),
+        onPressed: (){},  
+      child:Text('Masuk',
+      style:TextStyle(
+        color: Colors.black
+      )),
+      style: ElevatedButton.styleFrom(
+        primary: Color.fromARGB(255, 220, 226, 255),
+      ),
+      ),
     );
   }
 }

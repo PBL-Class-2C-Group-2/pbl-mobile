@@ -48,6 +48,7 @@ class LoginView extends StatelessWidget {
                   child: 
                 Text('Atau'),
                 ),
+                SosialLogin(),
               ],
             ),
           ),
