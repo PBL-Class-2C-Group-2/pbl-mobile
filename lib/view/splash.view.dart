@@ -26,7 +26,7 @@ class _SplashScreen extends State<Splashcreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              './assets/tambong.png',
+              './assets/tambong.jpg',
               width: 550,
               height: 550,
             ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_pbl/view/widgets/login.button.dart';
 import 'widgets/text.form.global.dart';
 
 class LoginView extends StatelessWidget {
@@ -7,7 +6,6 @@ class LoginView extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +18,10 @@ class LoginView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: Image.asset('./assets/tambong.jpg',
-                width: 250,
-                ),
+                  child: Image.asset(
+                    './assets/tambong.jpg',
+                    width: 250,
+                  ),
                 ),
 
                 //Email form
@@ -43,14 +42,33 @@ class LoginView extends StatelessWidget {
                   textInputType: TextInputType.text,
                   obscure: true,
                 ),
-                LoginButton(),
-                Center(
-                  child: 
-                Text('atau'),
-                ),
-                SizedBox(height: 15,),
 
-                //Google 
+                //Masuk
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  width: double.infinity,
+                  height: 80,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Masuk',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color.fromARGB(255, 220, 255, 229),
+                    ),
+                  ),
+                ),
+
+                Center(
+                  child: Text('atau'),
+                ),
+
+                SizedBox(height: 20),
+
+                //Google
                 ElevatedButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -61,15 +79,15 @@ class LoginView extends StatelessWidget {
                       SizedBox(width: 40),
                     ],
                   ),
-                  onPressed: (){},
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(20.0),
                     primary: Colors.white,
                     onPrimary: Colors.black,
                     side: BorderSide(
                       color: Colors.black12,
-                      ),
-                      shape: StadiumBorder(),
+                    ),
+                    shape: StadiumBorder(),
                   ),
                 ),
                 SizedBox(height: 20),
@@ -85,7 +103,7 @@ class LoginView extends StatelessWidget {
                       SizedBox(width: 30),
                     ],
                   ),
-                  onPressed: (){},
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(20.0),
                     primary: Colors.white,
@@ -104,4 +122,3 @@ class LoginView extends StatelessWidget {
     );
   }
 }
-
