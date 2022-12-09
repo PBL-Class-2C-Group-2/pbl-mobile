@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_pbl/view/navbar.dart';
 import 'widgets/text.form.global.dart';
+<<<<<<< HEAD
 import 'package:mobile_pbl/view/home.view.dart';
+=======
+// import 'package:mobile_pbl/view/home.view.dart';
+>>>>>>> 686eb766a3deb1f2be82267f9d43d95eac1dcd49
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -76,7 +80,11 @@ class LoginView extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('./assets/logo/google.png'),
+                      Image.asset(
+                        './assets/logo/google.png',
+                        height: 30,
+                        width: 30,
+                      ),
                       SizedBox(width: 35),
                       Text('Masuk dengan Google'),
                       SizedBox(width: 40),
@@ -100,7 +108,11 @@ class LoginView extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('./assets/logo/facebook.png'),
+                      Image.asset(
+                        './assets/logo/facebook.png',
+                        height: 30,
+                        width: 25,
+                      ),
                       SizedBox(width: 30),
                       Text('Masuk dengan Facebook'),
                       SizedBox(width: 30),
