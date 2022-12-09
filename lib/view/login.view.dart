@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/navbar.dart';
 import 'widgets/text.form.global.dart';
+import 'package:mobile_pbl/view/home.view.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -49,7 +51,8 @@ class LoginView extends StatelessWidget {
                   width: double.infinity,
                   height: 80,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => HomeView())),
                     child: Text(
                       'Masuk',
                       style: TextStyle(
