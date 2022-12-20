@@ -4,6 +4,8 @@ import 'package:mobile_pbl/view/navbar.dart';
 class HomeView extends StatelessWidget {
   List<String> images = ["assets/logo/facebook.png"];
 
+  HomeView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,17 +115,17 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                Row(
-                  children: [
-                    Image.asset(
-                      './assets/news/berita3.png',
-                    ),
-                    SizedBox(width: 20),
-                    Image.asset(
-                      './assets/news/berita4.png',
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     Image.asset(
+                //       './assets/news/berita3.png',
+                //     ),
+                //     SizedBox(width: 20),
+                //     Image.asset(
+                //       './assets/news/berita4.png',
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),

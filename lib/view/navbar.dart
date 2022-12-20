@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/about.view.dart';
+import 'package:mobile_pbl/view/home.view.dart';
 
 class Sidebar extends StatelessWidget {
   @override
@@ -10,7 +12,8 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Halaman Utama'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => HomeView())),
           ),
           ListTile(
             leading: Icon(Icons.store),
@@ -25,7 +28,8 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.villa),
             title: Text('Tentang Desa'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => AboutView())),
           ),
           ListTile(
             leading: Icon(Icons.facebook),
@@ -39,7 +43,7 @@ class Sidebar extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.mail),
-            title: Text('E-mail'),
+            title: const Text('E-mail'),
             onTap: () => null,
           ),
           const SizedBox(
