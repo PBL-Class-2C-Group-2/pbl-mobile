@@ -115,17 +115,17 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                // Row(
-                //   children: [
-                //     Image.asset(
-                //       './assets/news/berita3.png',
-                //     ),
-                //     SizedBox(width: 20),
-                //     Image.asset(
-                //       './assets/news/berita4.png',
-                //     ),
-                //   ],
-                // ),
+                Row(
+                  children: [
+                    Image.asset(
+                      './assets/news/berita3.png',
+                    ),
+                    SizedBox(width: 20),
+                    Image.asset(
+                      './assets/news/berita4.png',
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
