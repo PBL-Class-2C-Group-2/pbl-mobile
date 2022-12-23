@@ -9,9 +9,13 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // extendBodyBehindAppBar: true,
       appBar: AppBar(
+        // backgroundColor: Colors.transparent,
+        // elevation: 0,
         backgroundColor: Color.fromARGB(235, 191, 216, 250),
         foregroundColor: Colors.black,
+        shadowColor: Color.fromARGB(235, 191, 216, 250),
       ),
       drawer: Sidebar(),
       body: SingleChildScrollView(

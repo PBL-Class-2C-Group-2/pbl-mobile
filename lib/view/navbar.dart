@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_pbl/view/about.view.dart';
+import 'package:mobile_pbl/view/berita.view.dart';
 import 'package:mobile_pbl/view/home.view.dart';
 import 'package:mobile_pbl/view/market.view.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -35,7 +36,8 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.newspaper),
             title: Text('Berita Terbaru'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => BeritaView())),
           ),
           ListTile(
             leading: Icon(Icons.villa),

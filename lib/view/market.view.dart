@@ -13,7 +13,9 @@ class _MarketViewState extends State<MarketView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [],
+        backgroundColor: Color.fromARGB(235, 191, 216, 250),
+        foregroundColor: Colors.black,
+        shadowColor: Color.fromARGB(235, 191, 216, 250),
       ),
       drawer: Sidebar(),
       body: SingleChildScrollView(
@@ -21,6 +23,14 @@ class _MarketViewState extends State<MarketView> {
           child: Column(
             children: [
               Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      './assets/home.jpg',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 //height: 500,
                 padding: EdgeInsets.all(10),
                 child: Card(
