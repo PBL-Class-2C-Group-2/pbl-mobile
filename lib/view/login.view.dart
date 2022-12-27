@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_pbl/view/navbar.dart';
+import 'package:mobile_pbl/view/signup.view.dart';
 import 'widgets/text.form.global.dart';
 import 'package:mobile_pbl/view/home.view.dart';
 
@@ -125,6 +126,29 @@ class LoginView extends StatelessWidget {
                     shape: StadiumBorder(),
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Belum Punya Akun?  "),
+                      GestureDetector(
+                        child: Text(
+                          "Daftar",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 196, 12, 12),
+                              fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        onTap: () {
+                          // Write Tap Code Here.
+                          Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => SignUpScreen()));
+                        },
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
