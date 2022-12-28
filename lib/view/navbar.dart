@@ -5,15 +5,6 @@ import 'package:mobile_pbl/view/home.view.dart';
 import 'package:mobile_pbl/view/market.view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// Future<void> _launchUrl(String url) async {
-//   final Uri uri = Uri(scheme: "https", host: url);
-//   if (!await launchUrl(
-//     uri,
-//   )) {
-//     throw 'Could not launch $url';
-//   }
-// }
-
 class Sidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
