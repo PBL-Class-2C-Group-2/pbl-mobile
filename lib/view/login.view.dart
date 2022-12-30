@@ -10,14 +10,14 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'widgets/text.form.global.dart';
 import 'package:mobile_pbl/view/home.view.dart';
 
-class MyLoginView extends StatefulWidget {
-  const MyLoginView({Key? key}) : super(key: key);
+class LoginView extends StatefulWidget {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
-  _MyLoginViewState createState() => _MyLoginViewState();
+  _LoginViewState createState() => _LoginViewState();
 }
 
-class _MyLoginViewState extends State<MyLoginView> {
+class _LoginViewState extends State<LoginView> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -30,17 +30,18 @@ class _MyLoginViewState extends State<MyLoginView> {
           .show();
       return;
     }
-    // ProgressDialog progressDialog = ProgressDialog(context);
-    // progressDialog.style(message: "Loading ...");
-    // progressDialog.show();
-    final response = await http
-        .post(Uri.parse('http://172.16.1.4/api_mobile/api/show.php'), body: {
-      'email': emailController.text,
-      'password': passwordController.text
-    }, headers: {
-      'Accept': 'application/json'
-    });
-    // progressDialog.hide();
+    ProgressDialog progressDialog = ProgressDialog(context);
+    progressDialog.style(message: "Loading ...");
+    progressDialog.show();
+
+    final response =
+        await http.post(Uri.parse('http://127.0.0.1:8000/api/users'),
+            headers: {'Content-Type': 'application/json;'},
+            body: jsonEncode({
+              "email": emailController.text,
+              "password": passwordController.text,
+            }));
+    progressDialog.hide();
     if (response.statusCode == 200) {
       Alert(context: context, title: "Login Berhasil", type: AlertType.success)
           .show();
@@ -176,8 +177,8 @@ class _MyLoginViewState extends State<MyLoginView> {
                       ),
                     ),
                     onTap: () => {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SignUpScreen()))
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => SignUpView()))
                     },
                   ),
                 ],
