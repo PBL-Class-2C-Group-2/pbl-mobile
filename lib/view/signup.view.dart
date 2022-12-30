@@ -56,6 +56,8 @@ class _SignUpViewState extends State<SignUpView> {
               title: "Register Berhasil",
               type: AlertType.success)
           .show();
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomeView()));
     } else {
       Alert(context: context, title: "Register Gagal", type: AlertType.error)
           .show();

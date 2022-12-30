@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/login',[AkunController::class,'show']);
 Route::apiResource('users', AkunController::class);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

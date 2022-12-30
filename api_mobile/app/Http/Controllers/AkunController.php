@@ -51,9 +51,10 @@ class AkunController extends Controller
         ]);
     }
 
-    public function show(Akun $akun)
+    public function show($id)
     {
         //
+        // $user=Akun::find($id);
     }
 
     public function edit(Akun $akun)

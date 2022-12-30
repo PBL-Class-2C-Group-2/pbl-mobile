@@ -36,15 +36,18 @@ class _LoginViewState extends State<LoginView> {
 
     final response =
         await http.post(Uri.parse('http://127.0.0.1:8000/api/users'),
-            headers: {'Content-Type': 'application/json;'},
+            headers: {'Content-Type': 'application/json'},
             body: jsonEncode({
               "email": emailController.text,
               "password": passwordController.text,
             }));
     progressDialog.hide();
+    print(response.body);
     if (response.statusCode == 200) {
       Alert(context: context, title: "Login Berhasil", type: AlertType.success)
           .show();
+      Navigator.push(
+          context, MaterialPageRoute(builder: ((context) => HomeView())));
     } else {
       Alert(context: context, title: "Login Gagal", type: AlertType.error)
           .show();
