@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/home.view.dart';
 import '/view/login.view.dart';
 import '/view/signup.view.dart';
 
@@ -13,7 +14,7 @@ class _SplashScreen extends State<Splashcreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginView()));
+          context, MaterialPageRoute(builder: (context) => HomeView()));
     });
   }
 

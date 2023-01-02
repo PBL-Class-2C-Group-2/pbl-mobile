@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_pbl/view/navbar.dart';
 
@@ -96,18 +98,103 @@ class HomeView extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                       fontSize: 15),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  children: [
-                    Image.asset(
-                      './assets/news/berita1.jpg',
-                    ),
-                    SizedBox(width: 20),
-                    Image.asset(
-                      './assets/news/berita2.png',
-                    ),
-                  ],
+                Container(
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 200,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage('./assets/images/berita1.png'),
+                                fit: BoxFit.fill,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              'Siapkan Rencana Kerja 2023, Pemdes Tambong Adakan Musrenbangdes',
+                              style: TextStyle(
+                                fontFamily: 'Itim',
+                                color: Colors.black,
+                                fontSize: 14,
+                                backgroundColor: Colors.white,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 200,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage('./assets/images/berita2.png'),
+                                fit: BoxFit.fill,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              'Adakan Pelatihan, Pokdakan Susukan Lestari Ingin Wujudkan Tambong Sebagai Sentra Penghasil Ikan Air Tawar',
+                              style: TextStyle(
+                                fontFamily: 'Itim',
+                                color: Colors.black,
+                                fontSize: 14,
+                                backgroundColor: Colors.white,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 200,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage('./assets/images/berita3.png'),
+                                fit: BoxFit.fill,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              'Tinjau Kesiapan Soft Launching, Kadisbudpar Banyuwangi & Camat Kabat Sambangi Taman Meru',
+                              style: TextStyle(
+                                fontFamily: 'Itim',
+                                color: Colors.black,
+                                fontSize: 14,
+                                backgroundColor: Colors.white,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
+
                 SizedBox(height: 10),
                 Text(
                   'Produk Lokal Tambong',
@@ -118,18 +205,82 @@ class HomeView extends StatelessWidget {
                     fontSize: 15,
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  children: [
-                    Image.asset(
-                      './assets/news/berita3.png',
-                    ),
-                    SizedBox(width: 20),
-                    Image.asset(
-                      './assets/news/berita4.png',
-                    ),
-                  ],
+                Container(
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            width: 200,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('./assets/images/coco.jpg'),
+                                fit: BoxFit.fill,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              'Virgin Coconut Oil',
+                              style: TextStyle(
+                                fontFamily: 'Itim',
+                                color: Colors.black,
+                                fontSize: 14,
+                                backgroundColor: Colors.white,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            width: 200,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('./assets/images/anyam.jpg'),
+                                fit: BoxFit.fill,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              'Anyaman',
+                              style: TextStyle(
+                                fontFamily: 'Itim',
+                                color: Colors.black,
+                                fontSize: 14,
+                                backgroundColor: Colors.white,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
+
+                // SizedBox(height: 10),
+                // Row(
+                //   children: [
+                //     Image.asset(
+                //       './assets/news/berita3.png',
+                //     ),
+
+                //     SizedBox(width: 20),
+                //     Image.asset(
+                //       './assets/news/berita4.png',
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),

@@ -53,83 +53,103 @@ class _BeritaViewState extends State<BeritaView> {
   }
 
   Widget berita1() => Card(
-        clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-        child: Stack(
-          alignment: Alignment.center,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
+        child: Column(
           children: [
-            Ink.image(
-              image: AssetImage('./assets/images/berita1.png'),
-              child: InkWell(
-                onTap: () {},
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
               ),
-              height: 240,
-              fit: BoxFit.cover,
+              child: Image(image: AssetImage('./assets/images/berita1.png')),
             ),
-            Text(
-              'Siapkan Rencana Kerja 2023, Pemdes Tambong Adakan Musrenbangdes',
-              style: TextStyle(
-                fontFamily: 'Itim',
-                color: Colors.black,
-                fontSize: 23,
-              ),
-              textAlign: TextAlign.center,
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.topLeft,
+              child: Text(
+                  "Siapkan Rencana Kerja 2023,Pemdes Tambong Adakan Musrenbangdes",
+                  style: TextStyle(
+                      fontFamily: 'Itim',
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal)),
+            ),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),
       );
 
   Widget berita2() => Card(
-        clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-        child: Stack(
-          alignment: Alignment.center,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
+        child: Column(
           children: [
-            Ink.image(
-              image: AssetImage('./assets/images/berita2.png'),
-              child: InkWell(
-                onTap: () {},
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
               ),
-              height: 240,
-              fit: BoxFit.cover,
+              child: Image(image: AssetImage('./assets/images/berita2.png')),
             ),
-            Text(
-              'Adakan Pelatihan, Pokdakan Susukan Lestari  Ingin Wujudkan Tambong Sebagai Sentra Penghasil Ikan Air Tawar ',
-              style: TextStyle(
-                fontFamily: 'Itim',
-                color: Colors.black,
-                fontSize: 23,
-              ),
-              textAlign: TextAlign.center,
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.topLeft,
+              child: Text(
+                  "Adakan Pelatihan, Pokdakan Susukan Lestari Ingin Wujudkan Tambong Sebagai Sentra Penghasil Ikan Air Tawar",
+                  style: TextStyle(
+                      fontFamily: 'Itim',
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal)),
+            ),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),
       );
 
   Widget berita3() => Card(
-        clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-        child: Stack(
-          alignment: Alignment.center,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
+        child: Column(
           children: [
-            Ink.image(
-              image: AssetImage('./assets/images/berita3.png'),
-              child: InkWell(
-                onTap: () {},
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
               ),
-              height: 240,
-              fit: BoxFit.cover,
+              child: Image(image: AssetImage('./assets/images/berita3.png')),
             ),
-            Text(
-              'Tinjau Kesiapan Soft Launching, Kadisbudpar Banyuwangi & Camat Kabat Sambangi Taman Meru',
-              style: TextStyle(
-                fontFamily: 'Itim',
-                color: Colors.black,
-                fontSize: 23,
-              ),
-              textAlign: TextAlign.center,
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.topLeft,
+              child: Text(
+                  "Tinjau Kesiapan Soft Launching, Kadisbudpar Banyuwangi & Camat Kabat Sambangi Taman Meru",
+                  style: TextStyle(
+                      fontFamily: 'Itim',
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal)),
+            ),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),
       );
 }
+
+//
