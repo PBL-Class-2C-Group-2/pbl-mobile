@@ -1,7 +1,8 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
-
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:mobile_pbl/view/navbar.dart';
+import 'package:http/http.dart' as http;
 
 class BeritaView extends StatefulWidget {
   const BeritaView({Key? key}) : super(key: key);
@@ -11,6 +12,15 @@ class BeritaView extends StatefulWidget {
 }
 
 class _BeritaViewState extends State<BeritaView> {
+  List _get = [];
+  final String url = "http://127.0.0.1:8000/api/users";
+
+  @override
+  void initState() {
+    super.initState();
+    _getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,136 +30,67 @@ class _BeritaViewState extends State<BeritaView> {
         shadowColor: Color.fromARGB(235, 191, 216, 250),
       ),
       drawer: Sidebar(),
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                './assets/home.jpg',
+      body: ListView.builder(
+          itemCount: _get.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Container(
+                color: Colors.white,
+                height: 100,
+                width: 200,
+                child: _get[index]['urlToImage'] != null
+                    ? Image.network(
+                        _get[index]['urlToImage'],
+                        width: 100,
+                        fit: BoxFit.cover,
+                      )
+                    : Center(),
               ),
-              fit: BoxFit.cover,
-            ),
-          ),
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: <Widget>[
-              SizedBox(height: 15),
-              Text(
-                'Berita Terbaru',
-                style: TextStyle(
-                  fontFamily: 'Itim',
-                  fontSize: 26,
-                ),
-                textAlign: TextAlign.left,
+              title: Text(
+                '${_get[index]['email']}',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
-              berita1(),
-              berita2(),
-              berita3(),
-            ],
-          ),
-        ),
-      ),
+              subtitle: Text(
+                '${_get[index]['nama_lengkap']}',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              // onTap: () {
+              //   Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (c) => DetailPage(
+              //         url: _get[index]['url'],
+              //         title: _get[index]['title'],
+              //         content: _get[index]['content'],
+              //         urlToImage: _get[index]['urlToImage'],
+              //         author: _get[index]['author'],
+              //         publishedAt: _get[index]['publishedAt'],
+              //       ),
+              //     ),
+              //   );
+              // },
+            );
+          }),
     );
   }
 
-  Widget berita1() => Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-              child: Image(image: AssetImage('./assets/images/berita1.png')),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              alignment: Alignment.topLeft,
-              child: Text(
-                  "Siapkan Rencana Kerja 2023,Pemdes Tambong Adakan Musrenbangdes",
-                  style: TextStyle(
-                      fontFamily: 'Itim',
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal)),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
-      );
+  Future _getData() async {
+    try {
+      final response = await http.get(Uri.parse(url));
+      // return jsonDecode(response.body);
 
-  Widget berita2() => Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-              child: Image(image: AssetImage('./assets/images/berita2.png')),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              alignment: Alignment.topLeft,
-              child: Text(
-                  "Adakan Pelatihan, Pokdakan Susukan Lestari Ingin Wujudkan Tambong Sebagai Sentra Penghasil Ikan Air Tawar",
-                  style: TextStyle(
-                      fontFamily: 'Itim',
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal)),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
-      );
-
-  Widget berita3() => Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-              child: Image(image: AssetImage('./assets/images/berita3.png')),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              alignment: Alignment.topLeft,
-              child: Text(
-                  "Tinjau Kesiapan Soft Launching, Kadisbudpar Banyuwangi & Camat Kabat Sambangi Taman Meru",
-                  style: TextStyle(
-                      fontFamily: 'Itim',
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal)),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
-      );
+      // untuk cek data
+      if (response.statusCode == 200) {
+        print(response.body);
+        final data = jsonDecode(response.body);
+        setState(() {
+          _get = data['data'];
+        });
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 }
-
-//
