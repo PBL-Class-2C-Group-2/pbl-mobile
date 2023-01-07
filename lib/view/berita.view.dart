@@ -14,7 +14,6 @@ class BeritaView extends StatefulWidget {
 
 class _BeritaViewState extends State<BeritaView> {
   List _get = [];
-  final String url = "http://127.0.0.1:8000/api/front-berita";
 
   @override
   void initState() {
@@ -65,7 +64,6 @@ class _BeritaViewState extends State<BeritaView> {
                       judul: _get[index]['judul'],
                       created_at: _get[index]['created_at'],
                       deskripsi: _get[index]['deskripsi'],
-                      slug: _get[index]['slug'],
                     ),
                   ),
                 );
@@ -77,7 +75,8 @@ class _BeritaViewState extends State<BeritaView> {
 
   Future _getData() async {
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse("http://127.0.0.1:8000/api/front-berita"));
       // return jsonDecode(response.body);
 
       // untuk cek data
