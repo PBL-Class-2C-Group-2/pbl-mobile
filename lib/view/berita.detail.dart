@@ -16,7 +16,7 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: new Center(
-          child: Text(
+          child: const Text(
             "Detail",
             style: TextStyle(color: Colors.black),
           ),
@@ -58,8 +58,6 @@ class DetailPage extends StatelessWidget {
                   SizedBox(
                     height: 5,
                   ),
-                  Divider(),
-                  Text('$slug'),
                 ],
               ),
             )
