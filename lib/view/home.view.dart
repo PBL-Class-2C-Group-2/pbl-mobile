@@ -60,35 +60,6 @@ class HomeView extends StatelessWidget {
                     fontSize: 15,
                   ),
                 ),
-                // SizedBox(height: 30),
-                // ElevatedButton(
-                //   child: Container(
-                //     padding: EdgeInsets.symmetric(vertical: 15),
-                //     width: double.infinity,
-                //     height: 50,
-                //     child: Row(
-                //       children: [
-                //         Icon(
-                //           Icons.search,
-                //           color: Colors.black,
-                //         ),
-                //         SizedBox(width: 10),
-                //         Text(
-                //           'Telusuri',
-                //           style: TextStyle(
-                //             color: Colors.black,
-                //             fontFamily: 'Itim',
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                //   onPressed: () {},
-                //   style: ElevatedButton.styleFrom(
-                //     primary: Color.fromARGB(255, 255, 255, 255),
-                //     shape: StadiumBorder(),
-                //   ),
-                // ),
                 SizedBox(height: 10),
                 Text(
                   'Terbaru dari Tambong',
