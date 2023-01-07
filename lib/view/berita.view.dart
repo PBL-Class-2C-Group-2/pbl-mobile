@@ -39,9 +39,9 @@ class _BeritaViewState extends State<BeritaView> {
                 color: Colors.white,
                 height: 100,
                 width: 200,
-                child: _get[index]['urlToImage'] != null
+                child: _get[index]['gambar'] != null
                     ? Image.network(
-                        _get[index]['urlToImage'],
+                        _get[index]['gambar'],
                         width: 100,
                         fit: BoxFit.cover,
                       )
