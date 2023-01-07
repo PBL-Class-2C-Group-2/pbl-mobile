@@ -37,15 +37,7 @@ class _BeritaViewState extends State<BeritaView> {
             return ListTile(
               leading: Container(
                 color: Colors.white,
-<<<<<<< HEAD
-                height: 100,
-                width: 200,
-                child: _get[index]['gambar'] != null
-=======
-                height: 200,
-                width: 100,
                 child: _get[index]['urlToImage'] != null
->>>>>>> 8a48cedfb09c34753fae3916e7cc1f3cb79396a6
                     ? Image.network(
                         _get[index]['gambar'],
                         width: 100,
