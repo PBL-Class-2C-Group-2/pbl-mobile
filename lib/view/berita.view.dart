@@ -31,43 +31,48 @@ class _BeritaViewState extends State<BeritaView> {
       ),
       drawer: Sidebar(),
       body: ListView.builder(
-          itemCount: _get.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Container(
-                color: Colors.white,
-                child: _get[index]['urlToImage'] != null
-                    ? Image.network(
-                        _get[index]['gambar'],
-                        width: 100,
-                        fit: BoxFit.cover,
-                      )
-                    : Center(),
-              ),
-              title: Text(
-                '${_get[index]['judul']}',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              subtitle: Text(
-                '${_get[index]['deskripsi']}',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (c) => DetailPage(
-                      judul: _get[index]['judul'],
-                      created_at: _get[index]['created_at'],
-                      deskripsi: _get[index]['deskripsi'],
-                    ),
+        itemCount: _get.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Container(
+              color: Colors.grey[200],
+              height: 100,
+              width: 100,
+              child: _get[index]['urlToImage'] != null
+                  ? Image.network(
+                      _get[index]['urlToImage'],
+                      width: 100,
+                      fit: BoxFit.cover,
+                    )
+                  : Center(),
+            ),
+            title: Text(
+              '${_get[index]['judul']}',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            subtitle: Text(
+              '${_get[index]['deskripsi']}',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (c) => DetailPage(
+                    judul: _get[index]['judul'],
+                    deskripsi: _get[index]['deskripsi'],
+                    urlToImage: _get[index]['urlToImage'],
+                    slug: _get[index]['slug'],
+                    created_at: _get[index]['created_at'],
                   ),
-                );
-              },
-            );
-          }),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 

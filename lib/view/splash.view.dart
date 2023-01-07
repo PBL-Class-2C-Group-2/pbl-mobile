@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/berita.detail.dart';
 import 'package:mobile_pbl/view/home.view.dart';
 
 class Splashcreen extends StatefulWidget {

@@ -11,14 +11,14 @@ class MarketView extends StatefulWidget {
 }
 
 class _MarketViewState extends State<MarketView> {
-  List _get = [];
-  final String url = "http://127.0.0.1:8000/api/front-produk";
+  // List _get = [];
+  // final String url = "http://127.0.0.1:8000/api/front-produk";
 
-  @override
-  void initState() {
-    super.initState();
-    _getData();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _getData();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class _MarketViewState extends State<MarketView> {
                     Container(
                       padding: EdgeInsets.all(10),
                       alignment: Alignment.topLeft,
-                      child: Text('${_get.length}',
+                      child: Text('',
                           style: TextStyle(
                               fontFamily: 'Itim',
                               color: Colors.black,
@@ -101,21 +101,21 @@ class _MarketViewState extends State<MarketView> {
     );
   }
 
-  Future _getData() async {
-    try {
-      final response = await http.get(Uri.parse(url));
-      // return jsonDecode(response.body);
+  // Future _getData() async {
+  //   try {
+  //     final response = await http.get(Uri.parse(url));
+  //     // return jsonDecode(response.body);
 
-      // untuk cek data
-      if (response.statusCode == 200) {
-        print(response.body);
-        final data = jsonDecode(response.body);
-        setState(() {
-          _get = data['data'];
-        });
-      }
-    } catch (e) {
-      print(e);
-    }
-  }
+  //     // untuk cek data
+  //     if (response.statusCode == 200) {
+  //       print(response.body);
+  //       final data = jsonDecode(response.body);
+  //       setState(() {
+  //         _get = data['data'];
+  //       });
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 }
