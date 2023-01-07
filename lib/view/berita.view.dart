@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/berita.detail.dart';
 import 'package:mobile_pbl/view/navbar.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,7 +14,7 @@ class BeritaView extends StatefulWidget {
 
 class _BeritaViewState extends State<BeritaView> {
   List _get = [];
-  final String url = "http://127.0.0.1:8000/api/users";
+  final String url = "http://127.0.0.1:8000/api/front-berita";
 
   @override
   void initState() {
@@ -47,30 +48,28 @@ class _BeritaViewState extends State<BeritaView> {
                     : Center(),
               ),
               title: Text(
-                '${_get[index]['email']}',
+                '${_get[index]['judul']}',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               subtitle: Text(
-                '${_get[index]['nama_lengkap']}',
+                '${_get[index]['deskripsi']}',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              // onTap: () {
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (c) => DetailPage(
-              //         url: _get[index]['url'],
-              //         title: _get[index]['title'],
-              //         content: _get[index]['content'],
-              //         urlToImage: _get[index]['urlToImage'],
-              //         author: _get[index]['author'],
-              //         publishedAt: _get[index]['publishedAt'],
-              //       ),
-              //     ),
-              //   );
-              // },
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (c) => DetailPage(
+                      judul: _get[index]['judul'],
+                      created_at: _get[index]['created_at'],
+                      deskripsi: _get[index]['deskripsi'],
+                      slug: _get[index]['slug'],
+                    ),
+                  ),
+                );
+              },
             );
           }),
     );
