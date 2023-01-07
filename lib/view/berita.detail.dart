@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  final judul, deskripsi, slug, urlToImage, created_at;
+  final judul, deskripsi, slug, gambar_berita, created_at;
 
   DetailPage(
       {this.judul = "",
       this.deskripsi,
       this.slug,
-      this.urlToImage,
+      this.gambar_berita,
       this.created_at});
 
   @override
@@ -26,8 +26,8 @@ class DetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            urlToImage != null
-                ? Image.network(urlToImage)
+            gambar_berita != null
+                ? Image.network(gambar_berita)
                 : Container(
                     margin: EdgeInsets.all(20),
                     height: 250,

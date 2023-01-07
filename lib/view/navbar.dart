@@ -3,6 +3,7 @@ import 'package:mobile_pbl/view/about.view.dart';
 import 'package:mobile_pbl/view/berita.view.dart';
 import 'package:mobile_pbl/view/home.view.dart';
 import 'package:mobile_pbl/view/market.view.dart';
+import 'package:mobile_pbl/view/produk.view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 
@@ -33,13 +34,13 @@ class Sidebar extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.store),
-            title: Text('Market Place'),
+            title: Text('Produk Desa'),
             onTap: () => Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => MarketView())),
           ),
           ListTile(
             leading: Icon(Icons.newspaper),
-            title: Text('Berita Terbaru'),
+            title: Text('Berita Desa Tambong'),
             onTap: () => Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => BeritaView())),
           ),

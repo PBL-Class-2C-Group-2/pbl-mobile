@@ -38,9 +38,9 @@ class _BeritaViewState extends State<BeritaView> {
               color: Colors.grey[200],
               height: 100,
               width: 100,
-              child: _get[index]['urlToImage'] != null
+              child: _get[index]['uploads/berita/gambar_berita'] != null
                   ? Image.network(
-                      _get[index]['urlToImage'],
+                      _get[index]['gambar_berita'],
                       width: 100,
                       fit: BoxFit.cover,
                     )
@@ -63,7 +63,7 @@ class _BeritaViewState extends State<BeritaView> {
                   builder: (c) => DetailPage(
                     judul: _get[index]['judul'],
                     deskripsi: _get[index]['deskripsi'],
-                    urlToImage: _get[index]['urlToImage'],
+                    gambar_berita: _get[index]['uploads/berita/gambar_berita'],
                     slug: _get[index]['slug'],
                     created_at: _get[index]['created_at'],
                   ),
