@@ -42,7 +42,9 @@ dependencies:
   url_launcher: ^6.1.7
   community_material_icon: ^5.9.55
   http: ^0.13.5
-
+  intl: ^0.18.0
+  html: ^0.15.1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

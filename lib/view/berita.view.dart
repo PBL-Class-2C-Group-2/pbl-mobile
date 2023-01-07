@@ -38,13 +38,12 @@ class _BeritaViewState extends State<BeritaView> {
               color: Colors.grey[200],
               height: 100,
               width: 100,
-              child: _get[index]['uploads/berita/gambar_berita'] != null
-                  ? Image.network(
-                      _get[index]['gambar_berita'],
-                      width: 100,
-                      fit: BoxFit.cover,
-                    )
-                  : Center(),
+              child: Image.network(
+                "https://i.ibb.co/S32HNjD/no-image.jpg",
+                width: 64.0,
+                height: 64.0,
+                fit: BoxFit.fill,
+              ),
             ),
             title: Text(
               '${_get[index]['judul']}',

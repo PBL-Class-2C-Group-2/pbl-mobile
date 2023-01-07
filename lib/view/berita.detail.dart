@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
 
 class DetailPage extends StatelessWidget {
   final judul, deskripsi, slug, gambar_berita, created_at;
@@ -27,7 +28,7 @@ class DetailPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             gambar_berita != null
-                ? Image.network(gambar_berita)
+                ? Image.network("https://i.ibb.co/S32HNjD/no-image.jpg")
                 : Container(
                     margin: EdgeInsets.all(20),
                     height: 250,
@@ -64,6 +65,7 @@ class DetailPage extends StatelessWidget {
           ],
         ),
       ),
+
       //Floating Action Button
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.close),
@@ -72,5 +74,13 @@ class DetailPage extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+}
+
+class HtmlTags {
+  static void removeTag({htmlString, callback}) {
+    var document = parse(htmlString);
+    String parsedString = parse(document.body!.text).documentElement!.text;
+    callback(parsedString);
   }
 }
