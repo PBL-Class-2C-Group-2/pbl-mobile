@@ -36,11 +36,9 @@ class _BeritaViewState extends State<BeritaView> {
             return ListTile(
               leading: Container(
                 color: Colors.white,
-                height: 200,
-                width: 100,
                 child: _get[index]['urlToImage'] != null
                     ? Image.network(
-                        _get[index]['urlToImage'],
+                        _get[index]['gambar'],
                         width: 100,
                         fit: BoxFit.cover,
                       )
