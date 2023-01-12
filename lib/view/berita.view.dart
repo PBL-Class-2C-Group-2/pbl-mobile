@@ -6,7 +6,7 @@ import 'package:mobile_pbl/view/navbar.dart';
 import 'package:http/http.dart' as http;
 
 class BeritaView extends StatefulWidget {
-  const BeritaView({Key? key}) : super(key: key);
+  BeritaView({Key? key}) : super(key: key);
 
   @override
   State<BeritaView> createState() => _BeritaViewState();
@@ -25,6 +25,7 @@ class _BeritaViewState extends State<BeritaView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Berita Terbaru Tambong'),
         backgroundColor: Color.fromARGB(235, 191, 216, 250),
         foregroundColor: Colors.black,
         shadowColor: Color.fromARGB(235, 191, 216, 250),
@@ -59,10 +60,9 @@ class _BeritaViewState extends State<BeritaView> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (c) => DetailPage(
+                  builder: (c) => BeritaDetailPage(
                     judul: _get[index]['judul'],
                     deskripsi: _get[index]['deskripsi'],
-                    gambar_berita: _get[index]['uploads/berita/gambar_berita'],
                     slug: _get[index]['slug'],
                     created_at: _get[index]['created_at'],
                   ),

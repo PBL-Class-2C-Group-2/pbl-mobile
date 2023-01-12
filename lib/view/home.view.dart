@@ -72,7 +72,7 @@ class HomeView extends StatelessWidget {
                 Container(
                   height: 200,
                   child: ListView(
-                    scrollDirection: Axis.horizontal,
+                    // scrollDirection: Axis.horizontal,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -81,14 +81,14 @@ class HomeView extends StatelessWidget {
                           child: Container(
                             height: 200,
                             width: 200,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image:
-                                    AssetImage('./assets/images/berita1.png'),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
+                            // decoration: BoxDecoration(
+                            //   image: DecorationImage(
+                            //     image:
+                            //         AssetImage('./assets/images/berita1.png'),
+                            //     fit: BoxFit.fill,
+                            //   ),
+                            //   borderRadius: BorderRadius.circular(20),
+                            // ),
                             alignment: Alignment.bottomCenter,
                             child: Text(
                               'Siapkan Rencana Kerja 2023, Pemdes Tambong Adakan Musrenbangdes',

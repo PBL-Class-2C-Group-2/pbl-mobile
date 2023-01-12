@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class BeritaDetailPage extends StatelessWidget {
-  final judul, deskripsi, slug, gambar_berita, created_at;
+class ProdukDetailPage extends StatelessWidget {
+  final nama_produk, deskripsi, slug, gambar_produk, created_at, no_telp;
 
-  BeritaDetailPage(
-      {this.judul = "",
+  ProdukDetailPage(
+      {this.nama_produk = "",
       this.deskripsi,
       this.slug,
-      this.gambar_berita,
+      this.gambar_produk,
+      this.no_telp,
       this.created_at});
+
+  @override
+  void _launchWa(String url, String fallbackUrl) async {
+    try {
+      bool launched =
+          await launch(url, forceWebView: true, forceSafariVC: true);
+      if (!launched) {
+        await launch(fallbackUrl, forceSafariVC: true, forceWebView: true);
+      }
+    } catch (e) {
+      await launch(fallbackUrl, forceSafariVC: true, forceWebView: true);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +42,7 @@ class BeritaDetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            gambar_berita != null
+            gambar_produk != null
                 ? Image.network("https://i.ibb.co/S32HNjD/no-image.jpg")
                 : Container(
                     margin: EdgeInsets.all(20),
@@ -42,15 +57,11 @@ class BeritaDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    '$judul',
+                    '$nama_produk',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
-                  ),
-                  Text(
-                    '$created_at',
-                    style: TextStyle(fontStyle: FontStyle.italic),
                   ),
                   Text(
                     '$deskripsi',
@@ -58,6 +69,16 @@ class BeritaDetailPage extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 5,
+                  ),
+                  Center(
+                    child: TextButton(
+                      onPressed: () {
+                        _launchWa('', 'https://wa.me/$no_telp');
+                      },
+                      child: Text(
+                        'Pesan Sekarang',
+                      ),
+                    ),
                   ),
                 ],
               ),

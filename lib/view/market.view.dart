@@ -1,121 +1,96 @@
+// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/produk.detail.dart';
 import 'package:mobile_pbl/view/navbar.dart';
+import 'package:http/http.dart' as http;
 
 class MarketView extends StatefulWidget {
-  const MarketView({Key? key}) : super(key: key);
+  MarketView({Key? key}) : super(key: key);
 
   @override
   State<MarketView> createState() => _MarketViewState();
 }
 
 class _MarketViewState extends State<MarketView> {
-  // List _get = [];
-  // final String url = "http://127.0.0.1:8000/api/front-produk";
+  List _get = [];
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _getData();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    _getData();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Produk Lokal Tambong'),
         backgroundColor: Color.fromARGB(235, 191, 216, 250),
         foregroundColor: Colors.black,
         shadowColor: Color.fromARGB(235, 191, 216, 250),
       ),
       drawer: Sidebar(),
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                './assets/home.jpg',
+      body: ListView.builder(
+        itemCount: _get.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Container(
+              color: Colors.grey[200],
+              height: 100,
+              width: 100,
+              child: Image.asset(
+                "./assets/images/anyam.jpg",
+                width: 64.0,
+                height: 64.0,
+                fit: BoxFit.fill,
               ),
-              fit: BoxFit.cover,
             ),
-          ),
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: <Widget>[
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
-                      ),
-                      child:
-                          Image(image: AssetImage('./assets/images/anyam.jpg')),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      alignment: Alignment.topLeft,
-                      child: Text('',
-                          style: TextStyle(
-                              fontFamily: 'Itim',
-                              color: Colors.black,
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Produk kerajinan yang dibuat dari bambu yang dianyam secara tradisional.',
-                        style: TextStyle(
-                            fontFamily: 'Itim',
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 18),
-                        textAlign: TextAlign.justify,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 5,
-                      ),
-                    ),
-                    TextButton(
-                      child: const Text('Pesan Sekarang'),
-                      onPressed: () {/* ... */},
-                    ),
-                  ],
+            title: Text(
+              '${_get[index]['nama_produk']}',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            subtitle: Text(
+              '${_get[index]['deskripsi']}',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (c) => ProdukDetailPage(
+                    nama_produk: _get[index]['nama_produk'],
+                    deskripsi: _get[index]['deskripsi'],
+                    slug: _get[index]['slug'],
+                    created_at: _get[index]['created_at'],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ),
+              );
+            },
+          );
+        },
       ),
     );
   }
 
-  // Future _getData() async {
-  //   try {
-  //     final response = await http.get(Uri.parse(url));
-  //     // return jsonDecode(response.body);
+  Future _getData() async {
+    try {
+      final response =
+          await http.get(Uri.parse("http://127.0.0.1:8000/api/front-produk"));
+      // return jsonDecode(response.body);
 
-  //     // untuk cek data
-  //     if (response.statusCode == 200) {
-  //       print(response.body);
-  //       final data = jsonDecode(response.body);
-  //       setState(() {
-  //         _get = data['data'];
-  //       });
-  //     }
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
+      // untuk cek data
+      if (response.statusCode == 200) {
+        print(response.body);
+        final data = jsonDecode(response.body);
+        setState(() {
+          _get = data['data'];
+        });
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 }
