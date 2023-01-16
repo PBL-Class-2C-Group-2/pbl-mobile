@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:mobile_pbl/view/berita.view.dart';
+import 'package:mobile_pbl/view/market.view.dart';
 import 'package:mobile_pbl/view/navbar.dart';
 
 class HomeView extends StatelessWidget {
@@ -74,99 +76,76 @@ class HomeView extends StatelessWidget {
                   child: ListView(
                     // scrollDirection: Axis.horizontal,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            height: 200,
-                            width: 200,
-                            // decoration: BoxDecoration(
-                            //   image: DecorationImage(
-                            //     image:
-                            //         AssetImage('./assets/images/berita1.png'),
-                            //     fit: BoxFit.fill,
-                            //   ),
-                            //   borderRadius: BorderRadius.circular(20),
-                            // ),
-                            alignment: Alignment.bottomCenter,
-                            child: Text(
-                              'Siapkan Rencana Kerja 2023, Pemdes Tambong Adakan Musrenbangdes',
-                              style: TextStyle(
-                                fontFamily: 'Itim',
-                                color: Colors.black,
-                                fontSize: 14,
-                                backgroundColor: Colors.white,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              textAlign: TextAlign.center,
+                      Card(
+                        elevation: 7,
+                        color: Color.fromARGB(231, 243, 255, 245),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.newspaper,
+                            size: 25,
+                          ),
+                          title: Text(
+                            'Penyerahan Insentif Kepala Desa ke Beberapa Lembaga Desa',
+                            style: TextStyle(
+                              fontFamily: 'Itim',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
                             ),
                           ),
+                          onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => BeritaView())),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            height: 200,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image:
-                                    AssetImage('./assets/images/berita2.png'),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            alignment: Alignment.bottomCenter,
-                            child: Text(
-                              'Adakan Pelatihan, Pokdakan Susukan Lestari Ingin Wujudkan Tambong Sebagai Sentra Penghasil Ikan Air Tawar',
-                              style: TextStyle(
-                                fontFamily: 'Itim',
-                                color: Colors.black,
-                                fontSize: 14,
-                                backgroundColor: Colors.white,
-                              ),
-                              textAlign: TextAlign.center,
+                      Card(
+                        elevation: 7,
+                        color: Color.fromARGB(231, 243, 255, 245),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.newspaper,
+                            size: 25,
+                          ),
+                          title: Text(
+                            'Desa Tambong dan Aneka Ragam Perkebunannya',
+                            style: TextStyle(
+                              fontFamily: 'Itim',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
                             ),
                           ),
+                          onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => BeritaView())),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            height: 200,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image:
-                                    AssetImage('./assets/images/berita3.png'),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            alignment: Alignment.bottomCenter,
-                            child: Text(
-                              'Tinjau Kesiapan Soft Launching, Kadisbudpar Banyuwangi & Camat Kabat Sambangi Taman Meru',
-                              style: TextStyle(
-                                fontFamily: 'Itim',
-                                color: Colors.black,
-                                fontSize: 14,
-                                backgroundColor: Colors.white,
-                              ),
-                              textAlign: TextAlign.center,
+                      Card(
+                        elevation: 7,
+                        color: Color.fromARGB(231, 243, 255, 245),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.newspaper,
+                            size: 25,
+                          ),
+                          title: Text(
+                            'Aneka Ragam Kuliner Desa Tambong',
+                            style: TextStyle(
+                              fontFamily: 'Itim',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
                             ),
                           ),
+                          onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => BeritaView())),
                         ),
                       ),
                     ],
                   ),
                 ),
 
-                SizedBox(height: 10),
                 Text(
                   'Produk Lokal Tambong',
                   style: TextStyle(
@@ -179,60 +158,49 @@ class HomeView extends StatelessWidget {
                 Container(
                   height: 200,
                   child: ListView(
-                    scrollDirection: Axis.horizontal,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            width: 200,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('./assets/images/coco.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            alignment: Alignment.bottomCenter,
-                            child: Text(
-                              'Virgin Coconut Oil',
-                              style: TextStyle(
-                                fontFamily: 'Itim',
-                                color: Colors.black,
-                                fontSize: 14,
-                                backgroundColor: Colors.white,
-                              ),
-                              textAlign: TextAlign.center,
+                      Card(
+                        elevation: 7,
+                        color: Color.fromARGB(231, 243, 255, 245),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.store,
+                            size: 25,
+                          ),
+                          title: Text(
+                            'Virgin Coconut Oil',
+                            style: TextStyle(
+                              fontFamily: 'Itim',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
                             ),
                           ),
+                          onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => MarketView())),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            width: 200,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('./assets/images/anyam.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            alignment: Alignment.bottomCenter,
-                            child: Text(
-                              'Anyaman',
-                              style: TextStyle(
-                                fontFamily: 'Itim',
-                                color: Colors.black,
-                                fontSize: 14,
-                                backgroundColor: Colors.white,
-                              ),
-                              textAlign: TextAlign.center,
+                      Card(
+                        elevation: 7,
+                        color: Color.fromARGB(231, 243, 255, 245),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.store,
+                            size: 25,
+                          ),
+                          title: Text(
+                            'Anyaman',
+                            style: TextStyle(
+                              fontFamily: 'Itim',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
                             ),
                           ),
+                          onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => MarketView())),
                         ),
                       ),
                     ],

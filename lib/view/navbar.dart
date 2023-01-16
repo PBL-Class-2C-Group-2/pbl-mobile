@@ -3,7 +3,7 @@ import 'package:mobile_pbl/view/about.view.dart';
 import 'package:mobile_pbl/view/berita.view.dart';
 import 'package:mobile_pbl/view/home.view.dart';
 import 'package:mobile_pbl/view/market.view.dart';
-import 'package:mobile_pbl/view/produk.view.dart';
+// import 'package:mobile_pbl/view/produk.view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 
